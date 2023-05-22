@@ -28,7 +28,7 @@ describe('Authenticate Use Case', () => {
   })
 
   it('autenticar com email invalido esperando throw', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'inexistente@gmail.com',
         password: '12345',
@@ -43,7 +43,7 @@ describe('Authenticate Use Case', () => {
       password_hash: await hash('12345', 6),
     })
 
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'meuemail@gmail.com',
         password: 'senhadiferente',

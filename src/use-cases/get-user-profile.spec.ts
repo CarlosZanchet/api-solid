@@ -27,7 +27,7 @@ describe('Authenticate Use Case', () => {
   })
 
   it('deve gerar erro ao nao encontrar id do usuario', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({
         userId: 'not-exist',
       }),
