@@ -6,6 +6,7 @@ import { z } from 'zod'
 // vai validar os formatos das variaveis de ambiente, se é string ou o tipo estipulado
 const envSchema = z.object({
   NODE_ENV: z.enum(['dev', 'test', 'production']).default('dev'),
+  JWT_SECRET: z.string(),
   PORT: z.coerce.number().default(3333), // pega o dado e converte para o dado que eu informar
 })
 
